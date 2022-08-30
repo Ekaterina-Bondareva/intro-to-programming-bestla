@@ -17,7 +17,7 @@ const skillsSection = document.getElementById('skills');
 skillsList = skillsSection.querySelector('ul');
 
 for (let i = 0; i < skills.length; i++) {
-    const skill = document.createElement('li'); 
+    const skill = document.createElement('li');
     skill.innerHTML = `${skills[i]}`;
     skillsList.appendChild(skill);
 }
