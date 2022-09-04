@@ -6,7 +6,7 @@ const footer = document.querySelector('footer');
 
 const copyright = document.createElement('p');
 
-copyright.innerHTML = `Ekaterina Bondareva ${thisYear}`;
+copyright.innerHTML = `&copy Ekaterina Bondareva, ${thisYear}`;
 
 footer.appendChild(copyright);
 
@@ -23,7 +23,6 @@ for (let i = 0; i < skills.length; i++) {
 }
 
 const messageSection = document.getElementById('messages');
-messageSection.hidden = true;
 
 const messageForm = document.getElementsByName('leave_message');
 messageForm.item(0).addEventListener('submit', (event) => {
@@ -35,7 +34,11 @@ messageForm.item(0).addEventListener('submit', (event) => {
 
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
-    newMessage.innerHTML = `<a href="mailto: ${email}">${name}</a> wrote:  <span>${message}</span>`;
+    newMessage.innerHTML = `<div>
+        <span class="strong">${message}</span>
+        <p>from <a class="limk" href="mailto:${email}">${name}</a> &nbsp;</p>
+        </div>`;
+
 
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
@@ -43,12 +46,17 @@ messageForm.item(0).addEventListener('submit', (event) => {
     removeButton.addEventListener('click', () => {
         const entry = removeButton.parentNode;
         entry.remove();
+        const messageList = messageSection.querySelector('ul');
+        if (messageList.childElementCount == 0) {
+            const messageSection = document.getElementById('messages');
+            messageSection.style.display = "none"    
+        }
     });
 
     messageList.appendChild(newMessage);
     newMessage.appendChild(removeButton);
 
-    messageSection.hidden = false;
+    messageSection.style.display = "block"
 
     messageForm.item(0).reset();
 });
