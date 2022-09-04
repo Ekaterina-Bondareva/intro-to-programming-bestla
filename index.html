@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ekaterina Bondareva</title>
+        <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
         <link rel = "stylesheet" href="css/index.css">
-        <!-- <meta>-->      
     </head>
 
     <body>
-        <section id = 'name'>
-            <h1>Ekaterina Bondareva</h1>
-        </section>
+        <header class = "main-header">
+                <h1 class="name"><a href="#">Ekaterina Bondareva</a></h1>
+                <nav clsss = 'main-nav'>
+                    <ul class = "menu" role = 'list'>
+                        <li class = "menu-item">
+                            <a class = "link" href = '#about'>About</a>
+                        </li>
+                        <li class = "menu-item">
+                            <a class = "link" href = '#skills'>Skills</a>
+                        </li>
+                        <li class = "menu-item">
+                            <a class = "link" href = '#experience'>Experience</a>
+                        </li>
+                        <li class = "menu-item">
+                            <a class = "link" href = '#connect'>Connect</a>
+                        </li>
+                    </ul>
+                </nav>
+        </header>
 
         <section id = "about">
             <h2>About</h2>
@@ -24,10 +41,30 @@
         <section id = "experience">
             <h2>Experience</h2>
                 <ul>
-                    <li class="border-block">Reckitt Benkiser, Accounts Receivable Supervisor, 2011-2022</li>
-                    <li class="border-block">SGS, Accountant, 2010-2011</li>
-                    <li class="border-block">Saneco, Economist, 2009-2010</li>
-                    <li class="border-block">SSEU, specialist, 2005-2010</li>
+                    <li class="border-block">
+                        <span>
+                            <strong>Accounts Receivable Supervisor</strong>&mdash; Reckitt Benkiser
+                        </span>
+                        <span class="emphasis">2011 - Present</span>
+                    </li>
+                    <li class="border-block">
+                        <span>
+                            <strong>Accountant</strong>&mdash; SGS
+                        </span>
+                        <span class="emphasis">2010 - 2011</span>
+                    </li>
+                    <li class="border-block">
+                        <span>
+                            <strong>Economist</strong>&mdash; SANECO
+                        </span>
+                        <span class="emphasis">2009 - 2010</span>
+                    </li>
+                    <li class="border-block">
+                        <span>
+                            <strong>Specialist</strong>&mdash; SSEU
+                        </span>
+                        <span class="emphasis">2005 - 2010</span>
+                    </li>
                 </ul>
         </section>
 
@@ -49,15 +86,13 @@
             </form>
         </section>
 
-        <section id = 'messages'>
+        <section id = 'messages' style="display: none">
             <h2>Messages</h2>
             <ul></ul>
         </section>
 
-        <footer></footer>
+        <footer class = "main-footer"></footer>
+
         <script src = "js/index.js"></script>
     </body>
-
-   
-
 </html>
