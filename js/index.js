@@ -10,7 +10,7 @@ copyright.innerHTML = `&copy Ekaterina Bondareva, ${thisYear}`;
 
 footer.appendChild(copyright);
 
-const skills = ['JavaScript', 'HTML', 'CSS', 'SQL', 'GIT'];
+const skills = ['JavaScript', 'HTML', 'CSS', 'SQL'];
 
 const skillsSection = document.getElementById('skills');
 
@@ -60,19 +60,3 @@ messageForm.item(0).addEventListener('submit', (event) => {
 
     messageForm.item(0).reset();
 });
-
-let githubRequest = new XMLHttpRequest();
-githubRequest.open('GET', 'https://api.github.com/users/Ekaterina-Bondareva/repos');
-githubRequest.send();
-
-githubRequest.addEventListener('load', (event) =>{
-    let repositories = JSON.parse(githubRequest.response);
-    console.log(repositories);
-    let projectSection = document.getElementById('projects');
-    let projectList = document.getElementById('projects').querySelector('ul');
-    for (let i = 0; i < repositories.length; i++) {
-        let project = document.createElement('li');
-        project.innerHTML = `<a class="link link--no-decor" href="${repositories[i].html_url}">${repositories[i].name}</a>`;
-        projectList.appendChild(project);
-    }
-})
