@@ -20,17 +20,15 @@ section {
 h1, h2, h3, h4, h5, h6 {
     color: #093a58;
     font-weight: bold;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 h1 {
     font-size: 2em;
-    margin: 0;
 }
 
 h2 {
     font-size: 2em;
-    margin: 0;
 }
 
 button {
@@ -57,7 +55,7 @@ li {
     display: block;
 	padding: 10px 15px;
 	text-transform: uppercase;
-    margin-bottom: 1em;;
+    /* margin-bottom: 1em;; */
 }
 
 .main-header a:hover {
@@ -87,6 +85,11 @@ li {
 
 .strong {
     font-weight: 1000;
+}
+
+#projects li {
+    margin-top: 0.5em;
+    display: flex;
 }
 
 #skills li {
@@ -159,6 +162,11 @@ li {
   
 @media (min-width: 1025px) {
     
+    body {
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+
     .main-header {
         flex-direction: row;
         justify-content: space-between;
