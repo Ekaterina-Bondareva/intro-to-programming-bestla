@@ -61,18 +61,34 @@ messageForm.item(0).addEventListener('submit', (event) => {
     messageForm.item(0).reset();
 });
 
-let githubRequest = new XMLHttpRequest();
-githubRequest.open('GET', 'https://api.github.com/users/Ekaterina-Bondareva/repos');
-githubRequest.send();
+// let githubRequest = new XMLHttpRequest();
+// githubRequest.open('GET', 'https://api.github.com/users/Ekaterina-Bondareva/repos');
+// githubRequest.send();
 
-githubRequest.addEventListener('load', (event) =>{
-    let repositories = JSON.parse(githubRequest.response);
-    console.log(repositories);
-    let projectSection = document.getElementById('projects');
-    let projectList = document.getElementById('projects').querySelector('ul');
-    for (let i = 0; i < repositories.length; i++) {
-        let project = document.createElement('li');
-        project.innerHTML = `<a class="link link--no-decor" href="${repositories[i].html_url}">${repositories[i].name}</a>`;
-        projectList.appendChild(project);
-    }
-})
+// githubRequest.addEventListener('load', (event) =>{
+//     let repositories = JSON.parse(githubRequest.response);
+//     console.log(repositories);
+//     let projectSection = document.getElementById('projects');
+//     let projectList = document.getElementById('projects').querySelector('ul');
+//     for (let i = 0; i < repositories.length; i++) {
+//         let project = document.createElement('li');
+//         project.innerHTML = `<a class="link link--no-decor" href="${repositories[i].html_url}">${repositories[i].name}</a>`;
+//         projectList.appendChild(project);
+//     }
+// })
+
+fetchData();
+
+function fetchData() {
+    fetch('https://api.github.com/users/Ekaterina-Bondareva/repos')
+        .then(res => res.json())
+        .then(data => {
+            let projectSection = document.getElementById('projects');
+            let projectList = document.getElementById('projects').querySelector('ul');
+            for (let i = 0; i < data.length; i++) {
+                let project = document.createElement('li');
+                project.innerHTML = `<a class="link link--no-decor" href="${data[i].html_url}">${data[i].name}</a>`;
+                projectList.appendChild(project);
+            }
+        })
+}
