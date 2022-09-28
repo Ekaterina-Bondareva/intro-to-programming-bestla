@@ -1,17 +1,14 @@
+//Adding Copyright, Name and Year in the Footer
 const today = new Date();
-
 const thisYear = today.getFullYear();
-
 const footer = document.querySelector('footer');
-
 const copyright = document.createElement('p');
 
 copyright.innerHTML = `&copy Ekaterina Bondareva, ${thisYear}`;
-
 footer.appendChild(copyright);
 
+//Adding Skills
 const skills = ['JavaScript', 'HTML', 'CSS', 'SQL', 'GIT'];
-
 const skillsSection = document.getElementById('skills');
 
 skillsList = skillsSection.querySelector('ul');
@@ -22,23 +19,23 @@ for (let i = 0; i < skills.length; i++) {
     skillsList.appendChild(skill);
 }
 
+//Adding Messages
 const messageSection = document.getElementById('messages');
-
 const messageForm = document.getElementsByName('leave_message');
+
 messageForm.item(0).addEventListener('submit', (event) => {
     event.preventDefault();
 
     const name = event.target.name.value;
     const email = event.target.email.value;
     const message = event.target.message.value;
-
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
+
     newMessage.innerHTML = `<div>
         <span class="strong">${message}</span>
         <p>from <a class="limk" href="mailto:${email}">${name}</a> &nbsp;</p>
         </div>`;
-
 
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
@@ -55,12 +52,11 @@ messageForm.item(0).addEventListener('submit', (event) => {
 
     messageList.appendChild(newMessage);
     newMessage.appendChild(removeButton);
-
     messageSection.style.display = "block"
-
     messageForm.item(0).reset();
 });
 
+//Adding GitHub Links using AJAX
 // let githubRequest = new XMLHttpRequest();
 // githubRequest.open('GET', 'https://api.github.com/users/Ekaterina-Bondareva/repos');
 // githubRequest.send();
@@ -76,6 +72,9 @@ messageForm.item(0).addEventListener('submit', (event) => {
 //         projectList.appendChild(project);
 //     }
 // })
+
+
+//Adding GitHub Links using GitHub API via Fetch
 
 fetchData();
 
