@@ -9,28 +9,39 @@
 
     <body>
         <header class = "main-header">
-                <h1 class="name"><a href="#">Ekaterina Bondareva</a></h1>
-                <nav clsss = 'main-nav'>
-                    <ul class = "menu" role = 'list'>
-                        <li class = "menu-item">
-                            <a class = "link" href = '#about'>About</a>
-                        </li>
-                        <li class = "menu-item">
-                            <a class = "link" href = '#skills'>Skills</a>
-                        </li>
-                        <li class = "menu-item">
-                            <a class = "link" href = '#experience'>Experience</a>
-                        </li>
-                        <li class = "menu-item">
-                            <a class = "link" href = '#connect'>Connect</a>
-                        </li>
-                    </ul>
-                </nav>
+            <h1 class="name"><a href="#">Ekaterina Bondareva</a></h1>
+            <nav clsss = 'main-nav'>
+                <ul class = "menu" role = 'list'>
+                    <li class = "menu-item">
+                        <a class = "link" href = '#about'>About</a>
+                    </li>
+                    <li class = "menu-item">
+                        <a class = "link" href = '#skills'>Skills</a>
+                    </li>
+                    <li class = "menu-item">
+                        <a class = "link" href = '#projects'>Projects</a>
+                    </li>
+                    <li class = "menu-item">
+                        <a class = "link" href = '#experience'>Experience</a>
+                    </li>
+                    <li class = "menu-item">
+                        <a class = "link" href = '#form'>Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
         <section id = "about">
+            <div>
             <h2>About</h2>
-                <p>Born in Russia. Moved to the US. Have a Dream to become a Full Stack Developer. So let's Code the Dream!</p>
+                <p>Software developer with great backgound experience in Information Technologies, Finance,  Project Management and FMCG.</p>
+                <p>Have a Master Degree in Management Information Systems and more than 15 years of experience in implementation of it.</p>
+                <p>Passionate with web development and projects.</p>
+                <p>Ready to Code Your Dream! </p>
+            </div>
+            <div class = "img_div">
+                <img class = 'image' alt = "Ekaterina's headshot" src="images/me.png"> 
+            </div>
         </section>
 
         <section id = 'skills'>
@@ -73,14 +84,9 @@
                 </ul>
         </section>
 
-        <section id = "connect">
-             <h2>Connect</h2>
-                <a href="https://www.facebook.com/profile.php?id=100001022924723">My Facebook page</a>
-        </section>
-
         <section id = 'form'>
             <h2>Leave a Message</h2>
-            <form name = "leave_message">
+            <form id = 'leave_message' name = "leave_message">
                 <label for = 'name'>Name:</label><br>
                 <input id = 'name' type = "text" name = "name" required = "true"><br>
                 <label for = 'email'>E-mail:</label><br>
@@ -96,7 +102,24 @@
             <ul></ul>
         </section>
 
-        <footer class = "main-footer"></footer>
+        <footer class = "main-footer">
+            <div class = "connect">
+                <a class="link link--no-color" href="" target="_blank" title="LinkedIn">
+                    <i data-feather="linkedin"></i>
+                </a>
+                <a class="link link--no-color" href="https://github.com/Ekaterina-Bondareva" target="_blank" title="GitHub">
+                    <i data-feather="github"></i>
+                </a>
+                <a class="link link--no-color" href="https://www.facebook.com/profile.php?id=100001022924723"target="_blank" title="Facebook">
+                    <i data-feather="facebook"></i>
+                </a>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>
+            feather.replace()
+        </script>
 
         <script src = "js/index.js"></script>
     </body>
